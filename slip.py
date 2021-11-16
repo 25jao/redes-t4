@@ -53,7 +53,8 @@ class Enlace:
         # sequências especiais, de acordo com o protocolo CamadaEnlace (RFC 1055).
         
         for i in datagrama:
-            print(i)
+            if(i == b'\xdb'):
+                print(b'\xdb')
         
         self.linha_serial.enviar(b'\xc0' + datagrama + b'\xc0')
         pass
