@@ -52,10 +52,10 @@ class Enlace:
         # serial, fazendo corretamente a delimitação de quadros e o escape de
         # sequências especiais, de acordo com o protocolo CamadaEnlace (RFC 1055).
         
-        novo_datagrama = datagrama.replace(b'\xdb', b'\xdb\xdd')
-        novo_datagrama = novo_datagrama.replace(b'\xc0', b'\xdb\xdc')
+        datagrama1 = datagrama.replace(b'\xdb', b'\xdb\xdd')
+        datagrama2 = datagrama1.replace(b'\xc0', b'\xdb\xdc')
         
-        self.linha_serial.enviar(b'\xc0' + novo_datagrama + b'\xc0')
+        self.linha_serial.enviar(b'\xc0' + datagrama2 + b'\xc0')
         pass
 
     def __raw_recv(self, dados):
