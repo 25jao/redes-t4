@@ -54,7 +54,7 @@ class Enlace:
         
         for i in datagrama:
             if(i == b'\xdb'):
-                print(b'\xdb')
+                print('AAAAAAAAAAA')
         
         self.linha_serial.enviar(b'\xc0' + datagrama + b'\xc0')
         pass
