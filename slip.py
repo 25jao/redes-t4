@@ -53,7 +53,7 @@ class Enlace:
         # sequências especiais, de acordo com o protocolo CamadaEnlace (RFC 1055).
         
         novo_datagrama = datagrama.replace(b'\xdb', b'\xdb\xdd')
-        novo_datagrama = datagrama.replace(b'\xc0', b'\xdb\xdc')
+        novo_datagrama = novo_datagrama.replace(b'\xc0', b'\xdb\xdc')
         
         self.linha_serial.enviar(b'\xc0' + novo_datagrama + b'\xc0')
         pass
