@@ -51,6 +51,10 @@ class Enlace:
         # TODO: Preencha aqui com o código para enviar o datagrama pela linha
         # serial, fazendo corretamente a delimitação de quadros e o escape de
         # sequências especiais, de acordo com o protocolo CamadaEnlace (RFC 1055).
+        
+        for char i in datagrama:
+            print(i)
+        
         self.linha_serial.enviar(b'\xc0' + datagrama + b'\xc0')
         pass
 
